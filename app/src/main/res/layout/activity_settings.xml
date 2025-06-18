@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".SettingsActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/settings_title"
+        android:textSize="20sp"
+        android:layout_marginBottom="24dp"
+        android:gravity="center_horizontal"
+        android:layout_gravity="center_horizontal"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/setting_label_min_earnings_per_minute"
+        android:labelFor="@+id/edittext_min_earnings"/>
+
+    <EditText
+        android:id="@+id/edittext_min_earnings"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:hint="@string/setting_hint_min_earnings_per_minute"
+        android:layout_marginBottom="16dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/setting_label_max_distance_km"
+        android:labelFor="@+id/edittext_max_distance"/>
+
+    <EditText
+        android:id="@+id/edittext_max_distance"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:hint="@string/setting_hint_max_distance_km"
+        android:layout_marginBottom="24dp"/>
+
+    <Button
+        android:id="@+id/button_save_settings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/setting_button_save"
+        android:layout_gravity="center_horizontal"/>
+
+</LinearLayout>

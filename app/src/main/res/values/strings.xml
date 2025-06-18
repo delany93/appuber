@@ -1,3 +1,19 @@
 <resources>
-    <string name="app_name">UberHelper</string>
+    <string name="app_name">UberProfitabilityAnalyzer</string>
+    <string name="accessibility_service_label">Uber Trip Analyzer Service</string> <!-- New Label -->
+    <string name="accessibility_service_description">This service helps analyze Uber trip profitability by detecting trip request notifications. It requires access to screen content to read trip details when the Uber app displays them.</string> <!-- Slightly more detailed description -->
+    <string name="overlay_icon_alt_profitable">Profitable trip indicator</string>
+    <string name="overlay_icon_alt_not_profitable">Not profitable trip indicator</string>
+
+    <!-- Settings Activity -->
+    <string name="settings_title">Profitability Settings</string>
+    <string name="setting_label_min_earnings_per_minute">Desired Minimum Earnings per Minute ($)</string>
+    <string name="setting_hint_min_earnings_per_minute">e.g., 0.75</string>
+    <string name="setting_label_max_distance_km">Maximum Distance per Trip (km)</string>
+    <string name="setting_hint_max_distance_km">e.g., 10.0</string>
+    <string name="setting_button_save">Save Settings</string>
+    <string name="settings_saved_toast">Settings saved successfully!</string>
+    <string name="settings_validation_error_toast">Invalid input. Please enter positive numbers.</string>
+    <string name="settings_activity_title">Settings</string>
+    <string name="button_open_settings">Open Settings</string>
 </resources>
