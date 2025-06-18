@@ -4,81 +4,78 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
     android:padding="16dp"
     tools:context=".MainActivity">
 
+    <TextView
+        android:id="@+id/textViewTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Uber Profitability Analyzer"
+        android:textSize="20sp"
+        android:layout_marginBottom="32dp"/>
+
     <Button
-        android:id="@+id/buttonScan"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="Start Scanning"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginBottom="24dp"/>
-
-    <TextView
-        android:id="@+id/labelMinEarnings"
+        android:id="@+id/button_toggle_overlay_permission"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Minimum Earnings per Minute:"
-        app:layout_constraintTop_toBottomOf="@id/buttonScan"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginTop="24dp"/>
+        android:text="Request Overlay Permission &amp; Test" />
 
-    <EditText
-        android:id="@+id/editTextMinEarnings"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:hint="e.g., 200"
-        android:inputType="numberDecimal"
-        app:layout_constraintTop_toBottomOf="@id/labelMinEarnings"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="8dp"/>
-
-    <TextView
-        android:id="@+id/labelMaxDistance"
+    <Button
+        android:id="@+id/button_show_profitable_overlay"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Maximum Trip Distance (km):"
-        app:layout_constraintTop_toBottomOf="@id/editTextMinEarnings"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginTop="16dp"/>
+        android:layout_marginTop="16dp"
+        android:text="Show Profitable Overlay"
+        android:visibility="gone" />
 
+    <Button
+        android:id="@+id/button_show_not_profitable_overlay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Show Not Profitable Overlay"
+        android:visibility="gone" />
+    <Button
+        android:id="@+id/button_hide_overlay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Hide Overlay"
+        android:visibility="gone" />
+
+    <Button
+        android:id="@+id/button_open_settings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="@string/button_open_settings" />
+
+    <!-- Temporary UI for testing TextParserUtil -->
     <EditText
-        android:id="@+id/editTextMaxDistance"
-        android:layout_width="0dp"
+        android:id="@+id/edittext_test_parse_input"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="e.g., 10"
-        android:inputType="number"
-        app:layout_constraintTop_toBottomOf="@id/labelMaxDistance"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="8dp"/>
+        android:layout_marginTop="24dp"
+        android:hint="Enter text to parse (e.g., $10.50, 5.2 km, 15 min)"
+        android:inputType="textMultiLine"
+        android:minLines="2"/>
+
+    <Button
+        android:id="@+id/button_test_parse"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Test Text Parser"/>
 
     <TextView
-        android:id="@+id/textViewResult"
-        android:layout_width="0dp"
+        android:id="@+id/textview_test_parse_result"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Result: N/A"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:gravity="center"
-        app:layout_constraintTop_toBottomOf="@id/editTextMaxDistance"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="32dp"/>
+        android:layout_marginTop="8dp"
+        android:text="Parser Result: "
+        android:visibility="gone"/>
 
-    <TextView
-        android:id="@+id/textViewHourlyEarnings"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="Estimated Hourly: N/A"
-        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        android:gravity="center"
-        app:layout_constraintTop_toBottomOf="@id/textViewResult"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="16dp"/>
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
